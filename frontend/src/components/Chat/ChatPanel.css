@@ -1,0 +1,138 @@
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--k0);
+}
+
+.chat-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px;
+  padding: 0 10px;
+  border-bottom: 1px solid var(--ln);
+  background: var(--k0);
+}
+
+.chat-panel-header-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.chat-panel-title {
+  color: var(--t1);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.chat-panel-context {
+  color: var(--t2);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.chat-panel-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: var(--k1);
+}
+
+.chat-message {
+  max-width: 92%;
+  padding: 8px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  line-height: 1.55;
+  animation: chat-message-in 180ms ease-out;
+}
+
+.chat-message.assistant {
+  align-self: flex-start;
+  border: 1px solid var(--ln);
+  background: var(--k2);
+  color: var(--t0);
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  border: 1px solid var(--lam);
+  background: rgba(212, 146, 10, 0.08);
+  color: var(--am2);
+}
+
+.chat-message.system {
+  align-self: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--t2);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.chat-panel-input-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: end;
+  padding: 8px 10px 10px;
+  border-top: 1px solid var(--ln);
+  background: var(--k0);
+}
+
+.chat-panel-input {
+  border: 0;
+  border-bottom: 1px solid var(--ln);
+  background: transparent;
+  color: var(--t0);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  padding: 0 0 6px;
+}
+
+.chat-panel-input::placeholder {
+  color: var(--t2);
+}
+
+.chat-panel-send {
+  border: 1px solid var(--lam);
+  background: transparent;
+  color: var(--am);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  padding: 6px 9px;
+  text-transform: uppercase;
+  transition: background-color 150ms ease;
+}
+
+.chat-panel-send:hover {
+  background: var(--lam);
+}
+
+@keyframes chat-message-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
